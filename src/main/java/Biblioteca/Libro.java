@@ -6,40 +6,40 @@ public class Libro {
     private String Nombre, Autor,
     Editorial;
 
-    protected String getNombre() {
+    public String getNombre() {
         return Nombre;
     }
-    protected String getAutor() {
+    public String getAutor() {
         return Autor;
     }
 
-    protected String getEditorial() {
+    public String getEditorial() {
         return Editorial;
     }
 
     public ArrayList<Prestamo> prestamos = new ArrayList<Prestamo>();
 
-    protected Libro (){
+    public Libro (){
         this.Autor = "Autor";
         this.Editorial = "Editorial";
         this.Nombre = "Nombre";
     }
 
-    protected Libro (String autor, String editorial, String nombre){
+    public Libro (String autor, String editorial, String nombre){
         this.Autor = autor;
         this.Editorial = editorial;
         this.Nombre = nombre;
     }
 
-    private void setAutor(String autor) {
+    public void setAutor(String autor) {
         Autor = autor;
     }
 
-    protected void setEditorial(String editorial) {
+    public void setEditorial(String editorial) {
         Editorial = editorial;
     }
 
-    protected void setNombre(String nombre) {
+    public void setNombre(String nombre) {
         Nombre = nombre;
     }
 }
