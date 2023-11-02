@@ -1,5 +1,7 @@
 package Biblioteca;
 
+import java.util.ArrayList;
+
 public class Libro {
     private String Nombre, Autor,
     Editorial;
@@ -14,6 +16,8 @@ public class Libro {
     protected String getEditorial() {
         return Editorial;
     }
+
+    public ArrayList<Prestamo> prestamos = new ArrayList<Prestamo>();
 
     protected Libro (){
         this.Autor = "Autor";

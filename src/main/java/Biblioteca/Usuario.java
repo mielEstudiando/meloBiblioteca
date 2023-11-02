@@ -33,6 +33,13 @@ public class Usuario {
 	}
 
 	public Usuario() {
-		throw new UnsupportedOperationException();
+		this.nombre = "nombre";
+		this.rut = "rut";
+		this.telefono = "teléfono";
+	}
+	public Usuario(String nombre, String rut, String telefono){
+		this.nombre = nombre;
+		this.telefono = telefono;
+		this.rut = rut;
 	}
 }

@@ -1,5 +1,7 @@
 package Biblioteca;
 
+import java.time.LocalDate;
+
 public class Prestamo {
 	private Bibliotecario bibliotecario;
 	private Usuario usuario;
@@ -7,9 +9,6 @@ public class Prestamo {
 	private LocalDate fechaFin;
 	private Libro libro;
 	public Biblioteca biblioteca;
-	public Libro libro;
-	public Usuario usuario;
-	public Bibliotecario bibliotecario;
 
 	public Bibliotecario getBibliotecario() {
 		return this.bibliotecario;
@@ -51,7 +50,13 @@ public class Prestamo {
 		this.libro = libro;
 	}
 
-	public Prestamo() {
-		throw new UnsupportedOperationException();
+	public Prestamo(Bibliotecario bibliotecario, Libro libro, Usuario usuario,
+					LocalDate fechaInicio, LocalDate fechaFin, Biblioteca biblioteca) {
+		this.bibliotecario = bibliotecario;
+		this.libro = libro;
+		this.usuario = usuario;
+		this.fechaInicio = fechaInicio;
+		this.fechaFin = fechaFin;
+		this.biblioteca = biblioteca;
 	}
 }

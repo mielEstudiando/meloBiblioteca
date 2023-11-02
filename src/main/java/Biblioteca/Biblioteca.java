@@ -1,5 +1,6 @@
 package Biblioteca;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Biblioteca {
@@ -66,11 +67,25 @@ public class Biblioteca {
         return null;
     }
 
-    public void verLibros(){
-        System.out.println("  Nombre  |  Autor   | Editorial ");
+    public ArrayList<Libro> ObtenerLibroPorAutor(String autor){
+        ArrayList<Libro> libros = new ArrayList<Libro>();
         for (Libro libro : this.ListaDeLibros){
-            System.out.println(libro.getNombre() + " "
-                    + libro.getAutor() + " " + libro.getEditorial());
+            if (libro.getAutor().equals(autor)){
+                libros.add(libro);
+            }
         }
+        return libros;
+    }
+
+    public Prestamo GenerarPrestamo(Bibliotecario bibliotecario, Libro libro,
+                                    Usuario usuario, LocalDate fechaInicio,
+                                    LocalDate fechaFin){
+        Prestamo prestamo = new Prestamo(bibliotecario, libro, usuario,
+                fechaInicio, fechaFin, this);
+        this.prestamos.add(prestamo);
+        libro.prestamos.add(prestamo);
+        usuario.prestamos.add(prestamo);
+        bibliotecario.prestamo.add(prestamo);
+        return prestamo;
     }
 }
